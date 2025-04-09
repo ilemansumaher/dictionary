@@ -1,9 +1,18 @@
 import 'package:dictionary_pro/common/common.dart';
+import 'package:dictionary_pro/views/book_page/repository/book_screen.dart';
 import 'package:dictionary_pro/views/main_page/repository/main_screen.dart';
+import 'package:dictionary_pro/views/settings_page/repository/settings_screen.dart';
 import 'package:flutter/material.dart';
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+class MyHomePage extends StatefulWidget {
+  MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int currentIndex = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -16,33 +25,21 @@ class MyHomePage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            toolbarHeight: MediaQuery.of(context).size.height * 0.1,
-            title: TextField(
-              decoration: InputDecoration(
-                suffixIcon:
-                    IconButton(onPressed: () {}, icon: Icon(Icons.keyboard)),
-                hintText: "Search...",
-                fillColor: borderColor,
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: borderColor,
-                  ),
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-              ),
-            ),
-          ),
-          SliverList(
-            delegate: SliverChildListDelegate(
-              [],
-            ),
-          ),
+      body: IndexedStack(
+        index: currentIndex,
+        children: [
+          MainScreen(),
+          BookScreen(),
+          SettingsScreen(),
         ],
       ),
       bottomNavigationBar: NavigationBar(
+        onDestinationSelected: (int index) {
+          setState(() {
+            currentIndex = index;
+          });
+        },
+        selectedIndex: currentIndex,
         destinations: [
           NavigationDestination(
             icon: Icon(
