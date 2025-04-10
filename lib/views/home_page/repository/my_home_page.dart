@@ -2,6 +2,7 @@ import 'package:dictionary_pro/common/common.dart';
 import 'package:dictionary_pro/views/book_page/repository/book_screen.dart';
 import 'package:dictionary_pro/views/main_page/repository/main_screen.dart';
 import 'package:dictionary_pro/views/settings_page/repository/settings_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -14,6 +15,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List headerText = ["Search", "Bookmarks", "Settings"];
   int currentIndex = 0;
+  bool darkMod = false;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +26,20 @@ class _MyHomePageState extends State<MyHomePage> {
           headerText[currentIndex],
           style: TextStyle(color: borderColor),
         ),
+        actions: [
+          CupertinoSwitch(
+            value: darkMod,
+            activeColor: borderColor,
+            thumbIcon: WidgetStatePropertyAll(
+              Icon(Icons.dark_mode),
+            ),
+            onChanged: (value) {
+              setState(() {
+                darkMod = value;
+              });
+            },
+          )
+        ],
         centerTitle: true,
       ),
       body: IndexedStack(

@@ -1,4 +1,5 @@
 import 'package:dictionary_pro/common/common.dart';
+import 'package:dictionary_pro/views/about_word_page/repository/about_word_screen.dart';
 import 'package:dictionary_pro/widgets/app_bar_search.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +33,14 @@ class _BookScreenState extends State<BookScreen> {
                 padding: const EdgeInsets.all(3.0),
                 margin: EdgeInsets.all(5.0),
                 child: ListTile(
-                  onTap: null,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AboutWordScreen(),
+                      ),
+                    );
+                  },
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
