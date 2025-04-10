@@ -12,6 +12,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List headerText = ["Search", "Bookmarks", "Settings"];
   int currentIndex = 0;
 
   @override
@@ -20,7 +21,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: materialColor,
         title: Text(
-          "Search",
+          headerText[currentIndex],
           style: TextStyle(color: borderColor),
         ),
         centerTitle: true,
