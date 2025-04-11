@@ -1,4 +1,3 @@
-import 'package:dictionary_pro/common/common.dart';
 import 'package:flutter/material.dart';
 
 import '../../../widgets/app_bar_search.dart';

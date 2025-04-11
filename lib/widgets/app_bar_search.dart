@@ -15,13 +15,13 @@ class AppBarSearch extends StatelessWidget {
           suffixIcon: IconButton(onPressed: () {}, icon: Icon(Icons.keyboard)),
           hintText: "Search...",
           hintStyle: TextStyle(
-            color: textColorInSearch,
+            color:Theme.of(context).colorScheme.onSecondary,
           ),
-          fillColor: borderColor,
+          fillColor: Theme.of(context).colorScheme.secondary,
           border: OutlineInputBorder(
             borderSide: BorderSide(
               style: BorderStyle.none,
-              color: borderColor,
+              color: Theme.of(context).colorScheme.secondary,
             ),
             borderRadius: BorderRadius.circular(20.0),
           ),

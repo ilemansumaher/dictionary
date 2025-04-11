@@ -1,4 +1,3 @@
-import 'package:dictionary_pro/common/common.dart';
 import 'package:flutter/material.dart';
 
 class IntroductionSearch extends StatelessWidget {
@@ -9,7 +8,7 @@ class IntroductionSearch extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.0),
-        color: borderColor,
+        color: Theme.of(context).colorScheme.secondary,
       ),
       padding: EdgeInsets.all(20.0),
       margin: EdgeInsets.all(20.0),

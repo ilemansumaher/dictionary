@@ -1,4 +1,3 @@
-import 'package:dictionary_pro/common/common.dart';
 import 'package:flutter/material.dart';
 
 import '../../../widgets/definitiona_word.dart';
@@ -14,7 +13,7 @@ class AboutWordScreen extends StatelessWidget {
         title: Text(
           "Meanings",
           style: TextStyle(
-            color: borderColor,
+            color: Theme.of(context).colorScheme.secondary,
           ),
         ),
         leading: IconButton(
@@ -23,11 +22,11 @@ class AboutWordScreen extends StatelessWidget {
           },
           icon: Icon(
             Icons.keyboard_backspace_rounded,
-            color: borderColor,
+            color: Theme.of(context).colorScheme.secondary,
           ),
         ),
         centerTitle: true,
-        backgroundColor: materialColor,
+        backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: Padding(
         padding: EdgeInsets.all(10.0),
@@ -35,7 +34,7 @@ class AboutWordScreen extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: borderColor,
+                color: Theme.of(context).colorScheme.secondary,
                 borderRadius: BorderRadius.circular(12.0),
                 border: Border.all(
                   color: Colors.transparent,
@@ -72,7 +71,7 @@ class AboutWordScreen extends StatelessWidget {
                     return Container(
                       padding: EdgeInsets.only(top: 10, bottom: 10),
                       decoration: BoxDecoration(
-                        color: borderColor,
+                        color: Theme.of(context).colorScheme.secondary,
                         borderRadius: index == 0
                             ? BorderRadiusDirectional.only(
                                 topStart: Radius.circular(12),
