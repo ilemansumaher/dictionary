@@ -16,62 +16,76 @@ class MainScreen extends StatelessWidget {
         AppBarSearch(),
         SliverToBoxAdapter(
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Observer(builder: (_) {
-                return DecoratedBox(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    border: Border.all(
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
-                  ),
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(12.0),
-                    onTap: () {
-                      _contorller.switchLanguage(1);
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: HeaderWord(
-                        title: _contorller.lang1,
-                        fontWheit: FontWeight.bold,
+              SizedBox(
+                width: 12,
+              ),
+              Expanded(
+                child: Observer(builder: (_) {
+                  return Container(
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      border: Border.all(
+                        color: Theme.of(context).colorScheme.secondary,
                       ),
                     ),
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(12.0),
+                      onTap: () {
+                        _contorller.switchLanguage(1);
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: HeaderWord(
+                          title: _contorller.lang1,
+                          fontWheit: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  );
+                }),
+              ),
+              Expanded(
+                child: IconButton(
+                  onPressed: _contorller.swapLanguages,
+                  icon: Icon(
+                    Icons.change_circle_outlined,
+                    size: 35,
                   ),
-                );
-              }),
-              IconButton(
-                onPressed: _contorller.swapLanguages,
-                icon: Icon(
-                  Icons.change_circle_outlined,
-                  size: 35,
                 ),
               ),
-              Observer(builder: (_) {
-                return DecoratedBox(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10.0),
-                    border: Border.all(
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
-                  ),
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(12.0),
-                    onTap: () {
-                      _contorller.switchLanguage(2);
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: HeaderWord(
-                        title: _contorller.lang2,
-                        fontWheit: FontWeight.bold,
+              Expanded(
+                child: Observer(builder: (_) {
+                  return Container(
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10.0),
+                      border: Border.all(
+                        color: Theme.of(context).colorScheme.secondary,
                       ),
                     ),
-                  ),
-                );
-              }),
+                    child: InkWell(
+                      borderRadius: BorderRadius.circular(12.0),
+                      onTap: () {
+                        _contorller.switchLanguage(2);
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: HeaderWord(
+                          title: _contorller.lang2,
+                          fontWheit: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  );
+                }),
+              ),
+              SizedBox(
+                width: 12,
+              ),
             ],
           ),
         ),
