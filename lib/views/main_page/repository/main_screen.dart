@@ -43,7 +43,7 @@ class MainScreen extends StatelessWidget {
                 );
               }),
               IconButton(
-                onPressed: () {},
+                onPressed: _contorller.swapLanguages,
                 icon: Icon(
                   Icons.change_circle_outlined,
                   size: 35,

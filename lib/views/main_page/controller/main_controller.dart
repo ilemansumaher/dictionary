@@ -24,4 +24,12 @@ abstract class _ChangeContorllerBase with Store {
       lang2 = hiddenLang;
     }
   }
+
+  @action
+  @action
+void swapLanguages() {
+  final temp = lang1;
+  lang1 = lang2;
+  lang2 = temp;
+}
 }

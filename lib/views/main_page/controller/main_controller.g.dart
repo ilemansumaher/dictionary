@@ -64,6 +64,17 @@ mixin _$ChangeContorller on _ChangeContorllerBase, Store {
   }
 
   @override
+  void swapLanguages() {
+    final _$actionInfo = _$_ChangeContorllerBaseActionController.startAction(
+        name: '_ChangeContorllerBase.swapLanguages');
+    try {
+      return super.swapLanguages();
+    } finally {
+      _$_ChangeContorllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 lang1: ${lang1},
