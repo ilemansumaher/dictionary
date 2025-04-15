@@ -12,9 +12,8 @@ abstract class _ThemeChangeBase with Store {
   @observable
   bool themeData = true;
   @action
-  themeChange(){
+  themeChange() {
     themeData = !themeData;
-    themeMode = themeData ?ThemeMode.light:ThemeMode.dark;
-    log(themeMode.name);
+    themeMode = themeData ? ThemeMode.light : ThemeMode.dark;
   }
 }

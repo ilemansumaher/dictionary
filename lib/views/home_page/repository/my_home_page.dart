@@ -1,7 +1,6 @@
 import 'package:dictionary_pro/views/book_page/repository/book_screen.dart';
 import 'package:dictionary_pro/views/main_page/repository/main_screen.dart';
 import 'package:dictionary_pro/views/settings_page/controller/settings_controller.dart';
-import 'package:dictionary_pro/views/settings_page/repository/settings_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -53,7 +52,6 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           MainScreen(),
           BookScreen(),
-          SettingsScreen(),
         ],
       ),
       bottomNavigationBar: NavigationBar(
@@ -86,19 +84,6 @@ class _MyHomePageState extends State<MyHomePage> {
             label: "",
             selectedIcon: Icon(
               Icons.book_outlined,
-              color: Theme.of(context).colorScheme.secondary,
-              size: 38,
-            ),
-          ),
-          NavigationDestination(
-            icon: Icon(
-              Icons.settings_outlined,
-              size: 35,
-              color: Theme.of(context).colorScheme.onSecondary,
-            ),
-            label: "",
-            selectedIcon: Icon(
-              Icons.settings_outlined,
               color: Theme.of(context).colorScheme.secondary,
               size: 38,
             ),
