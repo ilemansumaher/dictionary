@@ -1,12 +1,14 @@
+import 'package:dictionary_pro/views/main_page/controller/main_controller.dart';
 import 'package:dictionary_pro/widgets/header_word.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 
 import '../../../widgets/app_bar_search.dart';
 import '../../../widgets/introduction_search.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
-
+  MainScreen({super.key});
+  ChangeContorller _contorller = ChangeContorller();
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -17,50 +19,59 @@ class MainScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              DecoratedBox(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  border: Border.all(
-                    color: Theme.of(context).colorScheme.secondary,
-                  ),
-                ),
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(12.0),
-                  onTap: () {},
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: HeaderWord(
-                      title: "English",
-                      fontWheit: FontWeight.bold,
+              Observer(builder: (_) {
+                return DecoratedBox(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    border: Border.all(
+                      color: Theme.of(context).colorScheme.secondary,
                     ),
                   ),
-                ),
-              ),
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(12.0),
+                    onTap: () {
+                      _contorller.switchLanguage(1);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: HeaderWord(
+                        title: _contorller.lang1,
+                        fontWheit: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                );
+              }),
               IconButton(
                 onPressed: () {},
                 icon: Icon(
                   Icons.change_circle_outlined,
+                  size: 35,
                 ),
               ),
-              DecoratedBox(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.0),
-                  border: Border.all(
-                    color: Theme.of(context).colorScheme.secondary,
-                  ),
-                ),
-                child: InkWell(
-                  borderRadius: BorderRadius.circular(12.0),
-                  onTap: () {},
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: HeaderWord(
-                      title: "Turkmen",
-                      fontWheit: FontWeight.bold,
+              Observer(builder: (_) {
+                return DecoratedBox(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    border: Border.all(
+                      color: Theme.of(context).colorScheme.secondary,
                     ),
                   ),
-                ),
-              ),
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(12.0),
+                    onTap: () {
+                      _contorller.switchLanguage(2);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: HeaderWord(
+                        title: _contorller.lang2,
+                        fontWheit: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                );
+              }),
             ],
           ),
         ),

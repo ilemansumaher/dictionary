@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 part 'settings_controller.g.dart';
 
-class ThemeController = _ThemeChangeBase with _$ThemeChange;
+class ThemeController = _ThemeChangeBase with _$ThemeController;
 
 abstract class _ThemeChangeBase with Store {
   @observable
