@@ -1,3 +1,4 @@
+import 'package:dictionary_pro/views/about_word_page/repository/about_word_screen.dart';
 import 'package:flutter/material.dart';
 
 class IntroductionSearch extends StatelessWidget {
@@ -40,7 +41,14 @@ class IntroductionSearch extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 TextButton.icon(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AboutWordScreen(),
+                      ),
+                    );
+                  },
                   iconAlignment: IconAlignment.end,
                   icon: Icon(
                     Icons.arrow_right_alt_rounded,

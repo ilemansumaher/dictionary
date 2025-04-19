@@ -1,4 +1,5 @@
 import 'package:dictionary_pro/common/common.dart';
+import 'package:dictionary_pro/views/home_page/controller/home_controller.dart';
 import 'package:dictionary_pro/views/home_page/repository/my_home_page.dart';
 import 'package:dictionary_pro/views/settings_page/controller/settings_controller.dart';
 import 'package:flutter/material.dart';
@@ -7,12 +8,14 @@ import 'package:get_it/get_it.dart';
 
 void main(List<String> args) {
   GetIt.instance.registerSingleton<ThemeController>(ThemeController());
+  GetIt.instance.registerSingleton<HomeController>(HomeController());
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
   var controller = GetIt.instance<ThemeController>();
+
   @override
   Widget build(BuildContext context) {
     return Observer(builder: (_) {

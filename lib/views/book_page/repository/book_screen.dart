@@ -1,12 +1,12 @@
 import 'package:dictionary_pro/views/about_word_page/repository/about_word_screen.dart';
-import 'package:dictionary_pro/views/book_page/controller/book_controller.dart';
+
 import 'package:dictionary_pro/widgets/app_bar_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 class BookScreen extends StatelessWidget {
   BookScreen({super.key});
-  var controller = BookController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,12 +37,9 @@ class BookScreen extends StatelessWidget {
                     children: [
                       Text(
                         "Abby",
-                        style: TextStyle(
-                          // color: Theme.of(context).colorScheme.onPrimary,
-                        ),
                       ),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 0.5,
+                        width: MediaQuery.of(context).size.width * 0.6,
                         child: Text(
                           ".(wɜːd): n a single unit of language",
                           overflow: TextOverflow.ellipsis,
@@ -50,15 +47,15 @@ class BookScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  trailing: Observer(builder: (_) {
-                    return Checkbox(
-                      value: controller.checkBox[index],
-                      onChanged: (_value) {
-                        controller.checkItBox(index, _value);
-                        print("$index  ${controller.checkBox[index]} $_value" );
-                      },
-                    );
-                  }),
+                  // trailing: Observer(builder: (_) {
+                  //   return Checkbox(
+                  //     value: controller.checkBox[index],
+                  //     onChanged: (_value) {
+                  //       controller.checkItBox(index, _value);
+                  //       print("$index  ${controller.checkBox[index]} $_value" );
+                  //     },
+                  //   );
+                  // }),
                 ),
               );
             }),

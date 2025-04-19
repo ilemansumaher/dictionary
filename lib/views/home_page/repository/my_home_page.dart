@@ -12,11 +12,10 @@ class MyHomePage extends StatelessWidget {
 
   List headerText = ["Search", "Bookmarks", "Settings"];
 
-  int currentIndex = 0;
 
   bool darkMod = false;
 
-  HomeController controllerChange = HomeController();
+  var controllerChange = GetIt.instance<HomeController>();
 
   var controller = GetIt.instance<ThemeController>();
 
@@ -26,7 +25,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
-          headerText[currentIndex],
+          headerText[controllerChange.currentIndex],
           style: TextStyle(
             color: Theme.of(context).colorScheme.secondary,
           ),
