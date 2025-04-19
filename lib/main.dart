@@ -24,7 +24,6 @@ class MyApp extends StatelessWidget {
         themeMode: controller.themeMode,
         theme: ThemeData(
           brightness: Brightness.light,
-          
           colorScheme: ColorScheme.light(
             primary: materialColor,
             secondary: borderColor,
