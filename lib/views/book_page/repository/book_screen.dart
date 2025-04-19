@@ -38,7 +38,7 @@ class BookScreen extends StatelessWidget {
                       Text(
                         "Abby",
                         style: TextStyle(
-                          color: Theme.of(context).colorScheme.onSecondary,
+                          // color: Theme.of(context).colorScheme.onPrimary,
                         ),
                       ),
                       SizedBox(
