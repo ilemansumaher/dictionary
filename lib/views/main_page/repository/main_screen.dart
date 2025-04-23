@@ -1,5 +1,4 @@
 import 'package:dictionary_pro/views/main_page/controller/main_controller.dart';
-import 'package:dictionary_pro/views/main_page/data/api.dart';
 import 'package:dictionary_pro/widgets/header_word.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -51,10 +50,9 @@ class MainScreen extends StatelessWidget {
               ),
               Expanded(
                 child: IconButton(
-                  onPressed:()async{
-                    await readJson();
-                  _contorller.swapLanguages();
-                  } ,
+                  onPressed: () {
+                    _contorller.swapLanguages();
+                  },
                   icon: Icon(
                     Icons.change_circle_outlined,
                     size: 35,

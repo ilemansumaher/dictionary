@@ -4,7 +4,10 @@ import '../../../widgets/definitiona_word.dart';
 import '../../../widgets/header_word.dart';
 
 class AboutWordScreen extends StatelessWidget {
-  AboutWordScreen({super.key});
+  AboutWordScreen(
+      {super.key, required this.mainWord, required this.definotion});
+  String mainWord;
+  String definotion;
   int count = 5;
   @override
   Widget build(BuildContext context) {
@@ -47,7 +50,7 @@ class AboutWordScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     HeaderWord(
-                      title: "Word",
+                      title: mainWord,
                       fontWheit: FontWeight.bold,
                     ),
                     SizedBox(
@@ -88,10 +91,7 @@ class AboutWordScreen extends StatelessWidget {
                         ),
                       ),
                       child: DefinitionaWord(
-                          index: index + 1,
-                          type: "n",
-                          title:
-                              "a promise or guarantee that you will do something or that something will happen or is true"),
+                          index: index + 1, type: "n", title: definotion),
                     );
                   },
                 ),

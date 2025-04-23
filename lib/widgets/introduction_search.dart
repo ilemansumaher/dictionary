@@ -45,7 +45,10 @@ class IntroductionSearch extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => AboutWordScreen(),
+                        builder: (context) => AboutWordScreen(
+                          mainWord: "",
+                          definotion: "",
+                        ),
                       ),
                     );
                   },

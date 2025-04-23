@@ -1,12 +1,16 @@
 import 'package:dictionary_pro/common/common.dart';
 import 'package:dictionary_pro/views/home_page/controller/home_controller.dart';
 import 'package:dictionary_pro/views/home_page/repository/my_home_page.dart';
+import 'package:dictionary_pro/views/main_page/data/dictionary_store.dart';
 import 'package:dictionary_pro/views/settings_page/controller/settings_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async {
+  GetIt.instance.registerSingleton<DictionaryStore>(DictionaryStore());
+  WidgetsFlutterBinding.ensureInitialized();
+  await GetIt.instance<DictionaryStore>().loadDictionary();
   GetIt.instance.registerSingleton<ThemeController>(ThemeController());
   GetIt.instance.registerSingleton<HomeController>(HomeController());
   runApp(MyApp());
@@ -14,6 +18,7 @@ void main(List<String> args) {
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
+
   var controller = GetIt.instance<ThemeController>();
 
   @override
@@ -35,12 +40,11 @@ class MyApp extends StatelessWidget {
         darkTheme: ThemeData(
           brightness: Brightness.dark,
           colorScheme: ColorScheme.dark(
-            primary: materialColorDark,
-            secondary: textColorInSearchDark,
-            background: backgroundColorDark,
-            onPrimary: secondaryColorDark,
-            onSecondary: backgroundColorDark
-          ),
+              primary: materialColorDark,
+              secondary: textColorInSearchDark,
+              background: backgroundColorDark,
+              onPrimary: secondaryColorDark,
+              onSecondary: backgroundColorDark),
         ),
         home: MyHomePage(),
       );
