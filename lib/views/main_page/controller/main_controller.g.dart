@@ -17,6 +17,38 @@ mixin _$ChangeContorller on _ChangeContorllerBase, Store {
               name: '_ChangeContorllerBase.hiddenLang'))
           .value;
 
+  late final _$chosse_lanAtom =
+      Atom(name: '_ChangeContorllerBase.chosse_lan', context: context);
+
+  @override
+  String get chosse_lan {
+    _$chosse_lanAtom.reportRead();
+    return super.chosse_lan;
+  }
+
+  @override
+  set chosse_lan(String value) {
+    _$chosse_lanAtom.reportWrite(value, super.chosse_lan, () {
+      super.chosse_lan = value;
+    });
+  }
+
+  late final _$to_lanAtom =
+      Atom(name: '_ChangeContorllerBase.to_lan', context: context);
+
+  @override
+  String get to_lan {
+    _$to_lanAtom.reportRead();
+    return super.to_lan;
+  }
+
+  @override
+  set to_lan(String value) {
+    _$to_lanAtom.reportWrite(value, super.to_lan, () {
+      super.to_lan = value;
+    });
+  }
+
   late final _$lang1Atom =
       Atom(name: '_ChangeContorllerBase.lang1', context: context);
 
@@ -77,6 +109,8 @@ mixin _$ChangeContorller on _ChangeContorllerBase, Store {
   @override
   String toString() {
     return '''
+chosse_lan: ${chosse_lan},
+to_lan: ${to_lan},
 lang1: ${lang1},
 lang2: ${lang2},
 hiddenLang: ${hiddenLang}

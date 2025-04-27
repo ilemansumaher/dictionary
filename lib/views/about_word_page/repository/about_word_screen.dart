@@ -11,7 +11,7 @@ class AboutWordScreen extends StatelessWidget {
   });
   int id;
 
-  final words = dictionaryStore.dictionary;
+  final words = dictionaryStoreEn.dictionary;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,7 +71,7 @@ class AboutWordScreen extends StatelessWidget {
               child: Container(
                 margin: EdgeInsets.only(top: 20.0),
                 child: ListView.builder(
-                  itemCount: words[id].definitionEn.length,
+                  itemCount: words[id].definitionRu.length,
                   padding: EdgeInsets.all(5.0),
                   itemBuilder: (context, index) {
                     return Container(
@@ -83,7 +83,7 @@ class AboutWordScreen extends StatelessWidget {
                                 topStart: Radius.circular(12),
                                 topEnd: Radius.circular(12),
                               )
-                            : index == words[id].definitionEn.length - 1
+                            : index == words[id].definitionRu.length - 1
                                 ? BorderRadiusDirectional.only(
                                     bottomEnd: Radius.circular(12),
                                     bottomStart: Radius.circular(12),
@@ -94,9 +94,9 @@ class AboutWordScreen extends StatelessWidget {
                         ),
                       ),
                       child: DefinitionaWord(
-                        type: words[id].definitionEn[index].type,
+                        type: words[id].definitionRu[index].type,
                         index: index + 1,
-                        title: words[id].definitionEn[index].meaning,
+                        title: words[id].definitionRu[index].meaning,
                       ),
                     );
                   },

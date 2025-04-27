@@ -8,7 +8,10 @@ import '../../../widgets/introduction_search.dart';
 
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
+  
   ChangeContorller _contorller = ChangeContorller();
+  
+  
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -36,6 +39,7 @@ class MainScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12.0),
                       onTap: () {
                         _contorller.switchLanguage(1);
+                        
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),

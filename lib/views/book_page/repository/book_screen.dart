@@ -1,11 +1,17 @@
 import 'package:dictionary_pro/views/about_word_page/repository/about_word_screen.dart';
+import 'package:dictionary_pro/views/main_page/data/data_storeen.dart';
+import 'package:dictionary_pro/views/main_page/data/data_storetr.dart';
 import 'package:dictionary_pro/views/main_page/data/dictionary_store.dart';
+import 'package:dictionary_pro/views/main_page/model/data_modelen.dart';
+import 'package:dictionary_pro/views/main_page/model/data_modeltr.dart';
 import 'package:dictionary_pro/widgets/app_bar_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 
-final dictionaryStore = GetIt.instance<DictionaryStore>();
+final dictionaryStoreRu = GetIt.instance<DictionaryStore>();
+final dictionaryStoreEn = GetIt.instance<DataSoreEn>();
+final dictionaryStoreTr = GetIt.instance<DataStoreTr>();
 
 class BookScreen extends StatelessWidget {
   BookScreen({super.key});
@@ -18,12 +24,15 @@ class BookScreen extends StatelessWidget {
           AppBarSearch(),
           Observer(
             builder: (_) {
-              final words = dictionaryStore.dictionary;
+              final wordsen = dictionaryStoreEn.dictionary;
+              final wordstr = dictionaryStoreTr.dictionary;
+              final wordsru = dictionaryStoreRu.dictionary;
               return SliverList(
                 delegate: SliverChildBuilderDelegate(
-                  childCount: words.length,
+                  childCount: wordsru.length,
                   (context, index) {
-                    final entry = words[index];
+                    var entry = wordsen[index];
+
                     return Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
@@ -38,7 +47,6 @@ class BookScreen extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => AboutWordScreen(
                                 id: index,
-                                
                               ),
                             ),
                           );
@@ -53,11 +61,11 @@ class BookScreen extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Text(entry.definitionEn[0].type),
+                            Text(entry.definitionRu[0].type),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * 0.6,
                               child: Text(
-                                entry.definitionEn[0].meaning,
+                                entry.definitionRu[0].meaning,
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),
