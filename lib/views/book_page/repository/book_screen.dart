@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 
+final dictionaryStore = GetIt.instance<DictionaryStore>();
+
 class BookScreen extends StatelessWidget {
   BookScreen({super.key});
-
-  final dictionaryStore = GetIt.I<DictionaryStore>();
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +19,11 @@ class BookScreen extends StatelessWidget {
           Observer(
             builder: (_) {
               final words = dictionaryStore.dictionary;
-
               return SliverList(
                 delegate: SliverChildBuilderDelegate(
                   childCount: words.length,
                   (context, index) {
                     final entry = words[index];
-
                     return Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
@@ -39,8 +37,8 @@ class BookScreen extends StatelessWidget {
                             context,
                             MaterialPageRoute(
                               builder: (context) => AboutWordScreen(
-                                mainWord: entry.english.word,
-                                definotion: entry.english.definition,
+                                id: index,
+                                
                               ),
                             ),
                           );
@@ -49,17 +47,17 @@ class BookScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
-                              entry.english.word,
+                              "${entry.word} ." ?? "",
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
-                            ), // İngilizce kelime
+                            ),
+                            Text(entry.definitionEn[0].type),
                             SizedBox(
                               width: MediaQuery.of(context).size.width * 0.6,
                               child: Text(
-                                entry.english.definition
-                                    .split('\n')[0], // ilk tanımı al
+                                entry.definitionEn[0].meaning,
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),

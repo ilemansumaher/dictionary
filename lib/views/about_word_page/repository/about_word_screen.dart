@@ -1,14 +1,17 @@
+import 'package:dictionary_pro/views/book_page/repository/book_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../widgets/definitiona_word.dart';
 import '../../../widgets/header_word.dart';
 
 class AboutWordScreen extends StatelessWidget {
-  AboutWordScreen(
-      {super.key, required this.mainWord, required this.definotion});
-  String mainWord;
-  String definotion;
-  int count = 5;
+  AboutWordScreen({
+    super.key,
+    required this.id,
+  });
+  int id;
+
+  final words = dictionaryStore.dictionary;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,14 +53,14 @@ class AboutWordScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     HeaderWord(
-                      title: mainWord,
+                      title: "${words[id].word}" ?? "",
                       fontWheit: FontWeight.bold,
                     ),
                     SizedBox(
                       width: 8,
                     ),
                     HeaderWord(
-                      title: "{wɜːd}",
+                      title: "{${words[id].pronunciation}}",
                       fontWheit: FontWeight.normal,
                     ),
                   ],
@@ -68,7 +71,7 @@ class AboutWordScreen extends StatelessWidget {
               child: Container(
                 margin: EdgeInsets.only(top: 20.0),
                 child: ListView.builder(
-                  itemCount: count,
+                  itemCount: words[id].definitionEn.length,
                   padding: EdgeInsets.all(5.0),
                   itemBuilder: (context, index) {
                     return Container(
@@ -80,7 +83,7 @@ class AboutWordScreen extends StatelessWidget {
                                 topStart: Radius.circular(12),
                                 topEnd: Radius.circular(12),
                               )
-                            : index == count - 1
+                            : index == words[id].definitionEn.length - 1
                                 ? BorderRadiusDirectional.only(
                                     bottomEnd: Radius.circular(12),
                                     bottomStart: Radius.circular(12),
@@ -91,7 +94,10 @@ class AboutWordScreen extends StatelessWidget {
                         ),
                       ),
                       child: DefinitionaWord(
-                          index: index + 1, type: "n", title: definotion),
+                        type: words[id].definitionEn[index].type,
+                        index: index + 1,
+                        title: words[id].definitionEn[index].meaning,
+                      ),
                     );
                   },
                 ),

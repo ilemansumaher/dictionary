@@ -1,0 +1,121 @@
+{
+    "russian": [
+      {
+        "word": "свет",
+        "pronunciation": "svet",
+        "definition_en": [
+          { "meaning": "light", "type": "noun" },
+          { "meaning": "bright", "type": "adj" }
+        ],
+        "definition_tr": [
+          { "meaning": "ışık", "type": "noun" },
+          { "meaning": "parlak", "type": "adj" }
+        ]
+      },
+      {
+        "word": "холодный",
+        "pronunciation": "kholodnyy",
+        "definition_en": [
+          { "meaning": "cold", "type": "adj" },
+          { "meaning": "chilly", "type": "adj" }
+        ],
+        "definition_tr": [
+          { "meaning": "soğuk", "type": "adj" },
+          { "meaning": "serin", "type": "adj" }
+        ]
+      },
+      {
+        "word": "бежать",
+        "pronunciation": "bezhat'",
+        "definition_en": [
+          { "meaning": "to run", "type": "verb" },
+          { "meaning": "to flee", "type": "verb" }
+        ],
+        "definition_tr": [
+          { "meaning": "koşmak", "type": "verb" },
+          { "meaning": "kaçmak", "type": "verb" }
+        ]
+      },
+      {
+        "word": "банк",
+        "pronunciation": "bank",
+        "definition_en": [
+          { "meaning": "bank", "type": "noun" },
+          { "meaning": "financial institution", "type": "noun" }
+        ],
+        "definition_tr": [
+          { "meaning": "banka", "type": "noun" },
+          { "meaning": "finans kurumu", "type": "noun" }
+        ]
+      },
+      {
+        "word": "острый",
+        "pronunciation": "ostryy",
+        "definition_en": [
+          { "meaning": "sharp", "type": "adj" },
+          { "meaning": "intense", "type": "adj" }
+        ],
+        "definition_tr": [
+          { "meaning": "keskin", "type": "adj" },
+          { "meaning": "şiddetli", "type": "adj" }
+        ]
+      },
+      {
+        "word": "весна",
+        "pronunciation": "vesna",
+        "definition_en": [
+          { "meaning": "spring (season)", "type": "noun" }
+        ],
+        "definition_tr": [
+          { "meaning": "ilkbahar", "type": "noun" }
+        ]
+      },
+      {
+        "word": "яркий",
+        "pronunciation": "yarkiy",
+        "definition_en": [
+          { "meaning": "bright", "type": "adj" },
+          { "meaning": "vivid", "type": "adj" }
+        ],
+        "definition_tr": [
+          { "meaning": "parlak", "type": "adj" },
+          { "meaning": "canlı", "type": "adj" }
+        ]
+      },
+      {
+        "word": "лаять",
+        "pronunciation": "layat'",
+        "definition_en": [
+          { "meaning": "to bark", "type": "verb" }
+        ],
+        "definition_tr": [
+          { "meaning": "havlamak", "type": "verb" }
+        ]
+      },
+      {
+        "word": "быстрый",
+        "pronunciation": "bystryy",
+        "definition_en": [
+          { "meaning": "fast", "type": "adj" },
+          { "meaning": "quick", "type": "adj" }
+        ],
+        "definition_tr": [
+          { "meaning": "hızlı", "type": "adj" },
+          { "meaning": "çabuk", "type": "adj" }
+        ]
+      },
+      {
+        "word": "смотреть",
+        "pronunciation": "smotret'",
+        "definition_en": [
+          { "meaning": "to watch", "type": "verb" },
+          { "meaning": "to look", "type": "verb" }
+        ],
+        "definition_tr": [
+          { "meaning": "izlemek", "type": "verb" },
+          { "meaning": "bakmak", "type": "verb" }
+        ]
+      }
+    ]
+  }
+  
