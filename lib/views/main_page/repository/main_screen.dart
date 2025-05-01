@@ -1,17 +1,18 @@
 import 'package:dictionary_pro/views/main_page/controller/main_controller.dart';
+import 'package:dictionary_pro/views/main_page/data/dictionary_store.dart';
 import 'package:dictionary_pro/widgets/header_word.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:get_it/get_it.dart';
 
 import '../../../widgets/app_bar_search.dart';
 import '../../../widgets/introduction_search.dart';
 
 class MainScreen extends StatelessWidget {
   MainScreen({super.key});
-  
-  ChangeContorller _contorller = ChangeContorller();
-  
-  
+
+  var _contorller = GetIt.instance<MainController>();
+
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -39,7 +40,6 @@ class MainScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12.0),
                       onTap: () {
                         _contorller.switchLanguage(1);
-                        
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),

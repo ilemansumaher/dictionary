@@ -1,21 +1,13 @@
 import 'package:dictionary_pro/views/about_word_page/repository/about_word_screen.dart';
-import 'package:dictionary_pro/views/main_page/data/data_storeen.dart';
-import 'package:dictionary_pro/views/main_page/data/data_storetr.dart';
 import 'package:dictionary_pro/views/main_page/data/dictionary_store.dart';
-import 'package:dictionary_pro/views/main_page/model/data_modelen.dart';
-import 'package:dictionary_pro/views/main_page/model/data_modeltr.dart';
 import 'package:dictionary_pro/widgets/app_bar_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 
-final dictionaryStoreRu = GetIt.instance<DictionaryStore>();
-final dictionaryStoreEn = GetIt.instance<DataSoreEn>();
-final dictionaryStoreTr = GetIt.instance<DataStoreTr>();
-
 class BookScreen extends StatelessWidget {
   BookScreen({super.key});
-
+  var controller = GetIt.instance<DictionaryStore>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,15 +16,12 @@ class BookScreen extends StatelessWidget {
           AppBarSearch(),
           Observer(
             builder: (_) {
-              final wordsen = dictionaryStoreEn.dictionary;
-              final wordstr = dictionaryStoreTr.dictionary;
-              final wordsru = dictionaryStoreRu.dictionary;
+              var wordsen = controller.dictionary;
               return SliverList(
                 delegate: SliverChildBuilderDelegate(
-                  childCount: wordsru.length,
+                  childCount: wordsen[0].length,
                   (context, index) {
-                    var entry = wordsen[index];
-
+                    var entry = wordsen[0][index];
                     return Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
@@ -45,9 +34,7 @@ class BookScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => AboutWordScreen(
-                                id: index,
-                              ),
+                              builder: (context) => AboutWordScreen(id: index),
                             ),
                           );
                         },
@@ -55,17 +42,21 @@ class BookScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Text(
-                              "${entry.word} ." ?? "",
+                              entry.word,
                               style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Text(entry.definitionRu[0].type),
                             SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.6,
+                              width: 15,
+                            ),
+                            Expanded(
                               child: Text(
-                                entry.definitionRu[0].meaning,
+                                entry.definition.first.translate
+                                    .firstWhere((e) => e.lang == "ru")
+                                    .description
+                                    .first,
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),

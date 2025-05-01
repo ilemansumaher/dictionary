@@ -13,13 +13,13 @@ mixin _$DictionaryStore on _DictionaryStore, Store {
       Atom(name: '_DictionaryStore.dictionary', context: context);
 
   @override
-  ObservableList<DataModelRu> get dictionary {
+  ObservableList<List<WordEntry>> get dictionary {
     _$dictionaryAtom.reportRead();
     return super.dictionary;
   }
 
   @override
-  set dictionary(ObservableList<DataModelRu> value) {
+  set dictionary(ObservableList<List<WordEntry>> value) {
     _$dictionaryAtom.reportWrite(value, super.dictionary, () {
       super.dictionary = value;
     });

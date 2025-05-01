@@ -1,8 +1,11 @@
 import 'package:dictionary_pro/views/book_page/repository/book_screen.dart';
+import 'package:dictionary_pro/views/main_page/data/dictionary_store.dart';
+import 'package:dictionary_pro/widgets/definitiona_word.dart';
+import 'package:dictionary_pro/widgets/header_word.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 
-import '../../../widgets/definitiona_word.dart';
-import '../../../widgets/header_word.dart';
+var controller = GetIt.instance<DictionaryStore>();
 
 class AboutWordScreen extends StatelessWidget {
   AboutWordScreen({
@@ -10,8 +13,8 @@ class AboutWordScreen extends StatelessWidget {
     required this.id,
   });
   int id;
-
-  final words = dictionaryStoreEn.dictionary;
+  var words = controller.dictionary;
+  // final words = dictionaryStore.dictionary;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,16 +56,16 @@ class AboutWordScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     HeaderWord(
-                      title: "${words[id].word}" ?? "",
+                      title: "${words[0][id].word}" ?? "",
                       fontWheit: FontWeight.bold,
                     ),
                     SizedBox(
                       width: 8,
                     ),
-                    HeaderWord(
-                      title: "{${words[id].pronunciation}}",
-                      fontWheit: FontWeight.normal,
-                    ),
+                    // HeaderWord(
+                    // title: "{${words[0][id].definition ?? ""}}",
+                    //   fontWheit: FontWeight.normal,
+                    // ),
                   ],
                 ),
               ),
@@ -71,7 +74,7 @@ class AboutWordScreen extends StatelessWidget {
               child: Container(
                 margin: EdgeInsets.only(top: 20.0),
                 child: ListView.builder(
-                  itemCount: words[id].definitionRu.length,
+                  itemCount: words[0][id].definition.length,
                   padding: EdgeInsets.all(5.0),
                   itemBuilder: (context, index) {
                     return Container(
@@ -83,7 +86,7 @@ class AboutWordScreen extends StatelessWidget {
                                 topStart: Radius.circular(12),
                                 topEnd: Radius.circular(12),
                               )
-                            : index == words[id].definitionRu.length - 1
+                            : index == words[0][id].definition.length - 1
                                 ? BorderRadiusDirectional.only(
                                     bottomEnd: Radius.circular(12),
                                     bottomStart: Radius.circular(12),
@@ -94,9 +97,16 @@ class AboutWordScreen extends StatelessWidget {
                         ),
                       ),
                       child: DefinitionaWord(
-                        type: words[id].definitionRu[index].type,
+                        type: words[0][0]
+                            .definition[0]
+                            .translate[0]
+                            .description[0],
                         index: index + 1,
-                        title: words[id].definitionRu[index].meaning,
+                        title: words[0][0]
+                            .definition[0]
+                            .translate[0]
+                            .kelime[0]
+                            .kelime,
                       ),
                     );
                   },

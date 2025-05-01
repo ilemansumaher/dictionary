@@ -1,0 +1,372 @@
+{
+  "dictionary": [
+    [
+      {
+        "word": "elma",
+        "definition": [
+          {
+            "translate": [
+              {
+                "kelime": [
+                  { "kelime": "elma", "type": "noun" }
+                ],
+                "lang": "tr",
+                "description": [
+                  "Tatlı ve sulu bir meyve türü."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "яблоко", "type": "noun" }
+                ],
+                "lang": "ru",
+                "description": [
+                  "Сладкий и сочный вид фрукта."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "apple", "type": "noun" }
+                ],
+                "lang": "en",
+                "description": [
+                  "A sweet and juicy type of fruit."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "word": "kitap",
+        "definition": [
+          {
+            "translate": [
+              {
+                "kelime": [
+                  { "kelime": "kitap", "type": "noun" }
+                ],
+                "lang": "tr",
+                "description": [
+                  "Bilgi veya hikaye içeren basılı eser."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "книга", "type": "noun" }
+                ],
+                "lang": "ru",
+                "description": [
+                  "Печатное произведение, содержащее информацию или рассказ."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "book", "type": "noun" }
+                ],
+                "lang": "en",
+                "description": [
+                  "A printed work containing information or story."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "word": "güzel",
+        "definition": [
+          {
+            "translate": [
+              {
+                "kelime": [
+                  { "kelime": "güzel", "type": "adjective" }
+                ],
+                "lang": "tr",
+                "description": [
+                  "Estetik olarak hoş veya çekici."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "красивый", "type": "adjective" }
+                ],
+                "lang": "ru",
+                "description": [
+                  "Эстетически приятный или привлекательный."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "beautiful", "type": "adjective" }
+                ],
+                "lang": "en",
+                "description": [
+                  "Aesthetically pleasing or attractive."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "word": "koşmak",
+        "definition": [
+          {
+            "translate": [
+              {
+                "kelime": [
+                  { "kelime": "koşmak", "type": "verb" }
+                ],
+                "lang": "tr",
+                "description": [
+                  "Hızlı adımlarla hareket etmek."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "бежать", "type": "verb" }
+                ],
+                "lang": "ru",
+                "description": [
+                  "Двигаться быстрыми шагами."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "run", "type": "verb" }
+                ],
+                "lang": "en",
+                "description": [
+                  "To move swiftly on foot."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "word": "masa",
+        "definition": [
+          {
+            "translate": [
+              {
+                "kelime": [
+                  { "kelime": "masa", "type": "noun" }
+                ],
+                "lang": "tr",
+                "description": [
+                  "Üzerine eşyaların konulduğu mobilya."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "стол", "type": "noun" }
+                ],
+                "lang": "ru",
+                "description": [
+                  "Мебель, на которую ставят предметы."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "table", "type": "noun" }
+                ],
+                "lang": "en",
+                "description": [
+                  "A piece of furniture with a flat top."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "word": "yemek",
+        "definition": [
+          {
+            "translate": [
+              {
+                "kelime": [
+                  { "kelime": "yemek", "type": "noun" },
+                  { "kelime": "yemek", "type": "verb" }
+                ],
+                "lang": "tr",
+                "description": [
+                  "Besin maddesi.",
+                  "Besin tüketmek."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "еда", "type": "noun" },
+                  { "kelime": "есть", "type": "verb" }
+                ],
+                "lang": "ru",
+                "description": [
+                  "Пища.",
+                  "Потреблять пищу."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "food", "type": "noun" },
+                  { "kelime": "eat", "type": "verb" }
+                ],
+                "lang": "en",
+                "description": [
+                  "Edible substance.",
+                  "To consume food."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "word": "okul",
+        "definition": [
+          {
+            "translate": [
+              {
+                "kelime": [
+                  { "kelime": "okul", "type": "noun" }
+                ],
+                "lang": "tr",
+                "description": [
+                  "Eğitim verilen kurum."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "школа", "type": "noun" }
+                ],
+                "lang": "ru",
+                "description": [
+                  "Учебное заведение."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "school", "type": "noun" }
+                ],
+                "lang": "en",
+                "description": [
+                  "An institution for education."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "word": "mutlu",
+        "definition": [
+          {
+            "translate": [
+              {
+                "kelime": [
+                  { "kelime": "mutlu", "type": "adjective" }
+                ],
+                "lang": "tr",
+                "description": [
+                  "Sevinç ve memnuniyet duyan."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "счастливый", "type": "adjective" }
+                ],
+                "lang": "ru",
+                "description": [
+                  "Испытывающий радость и удовлетворение."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "happy", "type": "adjective" }
+                ],
+                "lang": "en",
+                "description": [
+                  "Feeling joy and satisfaction."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "word": "araba",
+        "definition": [
+          {
+            "translate": [
+              {
+                "kelime": [
+                  { "kelime": "araba", "type": "noun" }
+                ],
+                "lang": "tr",
+                "description": [
+                  "Motorlu kara taşıtı."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "автомобиль", "type": "noun" }
+                ],
+                "lang": "ru",
+                "description": [
+                  "Моторное наземное транспортное средство."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "car", "type": "noun" }
+                ],
+                "lang": "en",
+                "description": [
+                  "A motor vehicle for land transport."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "word": "göz",
+        "definition": [
+          {
+            "translate": [
+              {
+                "kelime": [
+                  { "kelime": "göz", "type": "noun" }
+                ],
+                "lang": "tr",
+                "description": [
+                  "Görme organı."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "глаз", "type": "noun" }
+                ],
+                "lang": "ru",
+                "description": [
+                  "Орган зрения."
+                ]
+              },
+              {
+                "kelime": [
+                  { "kelime": "eye", "type": "noun" }
+                ],
+                "lang": "en",
+                "description": [
+                  "Organ of vision."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  ]
+}

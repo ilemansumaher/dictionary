@@ -8,49 +8,17 @@ part of 'main_controller.dart';
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
-mixin _$ChangeContorller on _ChangeContorllerBase, Store {
+mixin _$MainController on _MainControllerBase, Store {
   Computed<String>? _$hiddenLangComputed;
 
   @override
   String get hiddenLang =>
       (_$hiddenLangComputed ??= Computed<String>(() => super.hiddenLang,
-              name: '_ChangeContorllerBase.hiddenLang'))
+              name: '_MainControllerBase.hiddenLang'))
           .value;
 
-  late final _$chosse_lanAtom =
-      Atom(name: '_ChangeContorllerBase.chosse_lan', context: context);
-
-  @override
-  String get chosse_lan {
-    _$chosse_lanAtom.reportRead();
-    return super.chosse_lan;
-  }
-
-  @override
-  set chosse_lan(String value) {
-    _$chosse_lanAtom.reportWrite(value, super.chosse_lan, () {
-      super.chosse_lan = value;
-    });
-  }
-
-  late final _$to_lanAtom =
-      Atom(name: '_ChangeContorllerBase.to_lan', context: context);
-
-  @override
-  String get to_lan {
-    _$to_lanAtom.reportRead();
-    return super.to_lan;
-  }
-
-  @override
-  set to_lan(String value) {
-    _$to_lanAtom.reportWrite(value, super.to_lan, () {
-      super.to_lan = value;
-    });
-  }
-
   late final _$lang1Atom =
-      Atom(name: '_ChangeContorllerBase.lang1', context: context);
+      Atom(name: '_MainControllerBase.lang1', context: context);
 
   @override
   String get lang1 {
@@ -66,7 +34,7 @@ mixin _$ChangeContorller on _ChangeContorllerBase, Store {
   }
 
   late final _$lang2Atom =
-      Atom(name: '_ChangeContorllerBase.lang2', context: context);
+      Atom(name: '_MainControllerBase.lang2', context: context);
 
   @override
   String get lang2 {
@@ -81,36 +49,34 @@ mixin _$ChangeContorller on _ChangeContorllerBase, Store {
     });
   }
 
-  late final _$_ChangeContorllerBaseActionController =
-      ActionController(name: '_ChangeContorllerBase', context: context);
+  late final _$_MainControllerBaseActionController =
+      ActionController(name: '_MainControllerBase', context: context);
 
   @override
   void switchLanguage(int whichButton) {
-    final _$actionInfo = _$_ChangeContorllerBaseActionController.startAction(
-        name: '_ChangeContorllerBase.switchLanguage');
+    final _$actionInfo = _$_MainControllerBaseActionController.startAction(
+        name: '_MainControllerBase.switchLanguage');
     try {
       return super.switchLanguage(whichButton);
     } finally {
-      _$_ChangeContorllerBaseActionController.endAction(_$actionInfo);
+      _$_MainControllerBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
   void swapLanguages() {
-    final _$actionInfo = _$_ChangeContorllerBaseActionController.startAction(
-        name: '_ChangeContorllerBase.swapLanguages');
+    final _$actionInfo = _$_MainControllerBaseActionController.startAction(
+        name: '_MainControllerBase.swapLanguages');
     try {
       return super.swapLanguages();
     } finally {
-      _$_ChangeContorllerBaseActionController.endAction(_$actionInfo);
+      _$_MainControllerBaseActionController.endAction(_$actionInfo);
     }
   }
 
   @override
   String toString() {
     return '''
-chosse_lan: ${chosse_lan},
-to_lan: ${to_lan},
 lang1: ${lang1},
 lang2: ${lang2},
 hiddenLang: ${hiddenLang}
